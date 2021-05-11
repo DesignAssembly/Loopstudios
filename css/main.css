@@ -12,6 +12,10 @@
           box-sizing: border-box;
 }
 
+*:focus {
+  outline: 2px solid red;
+}
+
 html, body {
   height: 100%;
 }
@@ -52,6 +56,21 @@ h3 {
 
 p {
   line-height: 25px;
+}
+
+#skip a {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#skip a:focus {
+  height: auto;
+  position: static;
+  width: auto;
 }
 
 @media screen and (min-width: 600px) {
@@ -266,6 +285,7 @@ p {
   width: 144px;
   position: absolute;
   top: 2.5rem;
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) {
@@ -291,6 +311,7 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
@@ -303,7 +324,18 @@ p {
 @media screen and (min-width: 768px) {
   .hero .container {
     margin: 0 0 0 10%;
+    z-index: 2;
   }
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .box-text {
